@@ -1,6 +1,8 @@
 Convert Logins from 1Password to KeepassX File
 ==============================================
 
+This can only convert your "Logins", not your Accounts/Wallet etc.
+
 1Password
 ---------
 
