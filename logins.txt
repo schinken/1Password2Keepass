@@ -1,0 +1,3 @@
+title	notes	username	password	url
+"title1"	""	"myuser1"	"wo8runwoenrouwenrouvr"	""
+"title2"	""	"myuser2"	"ncr98un4v589nms89cdad"	"http://github.com/schinken"
