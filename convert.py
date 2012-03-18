@@ -1,5 +1,6 @@
 __author__ = 'Schinken'
 
+import sys
 import csv
 import datetime
 from xml.sax.saxutils import escape
@@ -45,7 +46,15 @@ def writeKeepassFile( strdata, template = 'keepass_template.xml' ):
 
 def main():
 
-    entries = read1PasswordFile('logins.txt')
+    args = sys.argv[1:]
+
+    if not args:
+        print "python convert.py logins.txt > keepass.xml"
+        sys.exit(1)
+
+    infile  = args[0]
+
+    entries = read1PasswordFile( infile )
     dt      = datetime.datetime.now().replace( microsecond = 0 )
     dtiso   = dt.isoformat()
 
