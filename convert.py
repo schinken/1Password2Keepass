@@ -2,6 +2,7 @@ __author__ = 'Schinken'
 
 import csv
 import datetime
+from xml.sax.saxutils import escape
 
 map1Pass = ['title','notes','username', 'password', 'url']
 
@@ -27,7 +28,7 @@ def read1PasswordFile( filename ):
 
     data = []
     for row in parsed:
-        data.append( { map1Pass[x] : y for x,y in enumerate( row ) } )
+        data.append( { map1Pass[x] : escape(y) for x,y in enumerate( row ) } )
 
     return data
 
@@ -35,6 +36,7 @@ def renderKeepassEntry( data, dtiso ):
 
     return keepassEntry % ( data['title'], data['username'], data['password'],
                             data['url'], dtiso, dtiso, dtiso )
+
 
 def writeKeepassFile( strdata, template = 'keepass_template.xml' ):
 
